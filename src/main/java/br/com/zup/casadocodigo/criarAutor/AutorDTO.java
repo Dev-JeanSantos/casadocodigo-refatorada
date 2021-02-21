@@ -17,7 +17,6 @@ public class AutorDTO {
 	
 	
 	public AutorDTO(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Size(max = 400) String descricao) {
-		super();
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;
@@ -28,7 +27,13 @@ public class AutorDTO {
 		// TODO Auto-generated method stub
 		return new Autor(this.nome, this.email, this.descricao);
 	}
+
+
+	public String getEmail() {
 		
-	
+		return email;
+	}
+
+
 	
 }
