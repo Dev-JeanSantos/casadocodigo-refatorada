@@ -2,6 +2,7 @@ package br.com.zup.casadocodigo.criarAutor;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +17,14 @@ public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private @NotBlank String nome;
-	private @NotBlank @Email String email;
-	private @NotBlank @Size(max = 400) String descricao;
+	@NotBlank 
+	private String nome;
+	@NotBlank @Email
+	@Column(unique = true)
+	private  String email;
+	@NotBlank @Size(max = 400) 
+	private String descricao;
+	
 	private LocalDateTime momentoCriacao = LocalDateTime.now();
 
 	public Autor(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Size(max = 400) String descricao) {
