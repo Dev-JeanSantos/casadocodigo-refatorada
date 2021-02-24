@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarAutor;
+package br.com.zup.casadocodigo.autor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 import br.com.zup.casadocodigo.validations.UniqueValue;
 
-public class AutorDTO {
+public class AutorEntradaDTO {
 	
 	@NotBlank(message = "O campo nome não deve ser vazio")
 	private String nome;
@@ -18,7 +18,7 @@ public class AutorDTO {
 	@Size(max = 400, message = "O campo descrição não deve ultrapasar 400 caracteres")
 	private String descricao;	
 	
-	public AutorDTO(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Size(max = 400) String descricao) {
+	public AutorEntradaDTO(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Size(max = 400) String descricao) {
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;

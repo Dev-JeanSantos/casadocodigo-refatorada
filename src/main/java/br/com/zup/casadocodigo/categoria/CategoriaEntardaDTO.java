@@ -1,10 +1,10 @@
-package br.com.zup.casadocodigo.criarCategoria;
+package br.com.zup.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
 import br.com.zup.casadocodigo.validations.UniqueValue;
 
-public class CategoriaDTO {
+public class CategoriaEntardaDTO {
 	
 	@NotBlank
 	@UniqueValue(domainClass = Categoria.class, fieldName = "nome", message = "Nome da Categoria ja está cadastrado!")

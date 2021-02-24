@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarCategoria;
+package br.com.zup.casadocodigo.categoria;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
-import br.com.zup.casadocodigo.criarLivro.Livro;
+import br.com.zup.casadocodigo.livro.Livro;
 
 @Entity
 public class Categoria {

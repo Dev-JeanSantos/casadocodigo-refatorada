@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarLivro;
+package br.com.zup.casadocodigo.livro;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,8 +15,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import br.com.zup.casadocodigo.criarAutor.Autor;
-import br.com.zup.casadocodigo.criarCategoria.Categoria;
+import br.com.zup.casadocodigo.autor.Autor;
+import br.com.zup.casadocodigo.categoria.Categoria;
 
 @Entity
 public class Livro {
@@ -57,8 +57,19 @@ public class Livro {
 				this.dataPublicacao = dataPublicacao;
 				this.autor = autor;
 				this.categoria = categoria;
+	}	
+	
+	@Deprecated
+	public Livro() {
 	}
 
+
+	public Long getId() {
+		return id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
 	@Override
 	public String toString() {
 		return "Livro [id=" + id + ", titulo=" + titulo + ", resumo=" + resumo + ", sumario=" + sumario + ", preco="

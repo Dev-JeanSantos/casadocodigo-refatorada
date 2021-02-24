@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarAutor;
+package br.com.zup.casadocodigo.autor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import br.com.zup.casadocodigo.criarLivro.Livro;
+import br.com.zup.casadocodigo.livro.Livro;
 
 @Entity
 public class Autor {

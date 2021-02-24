@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarAutor;
+package br.com.zup.casadocodigo.autor;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarCategoria;
+package br.com.zup.casadocodigo.categoria;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarLivro;
+package br.com.zup.casadocodigo.livro;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,12 +15,12 @@ import org.springframework.util.Assert;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
-import br.com.zup.casadocodigo.criarAutor.Autor;
-import br.com.zup.casadocodigo.criarCategoria.Categoria;
+import br.com.zup.casadocodigo.autor.Autor;
+import br.com.zup.casadocodigo.categoria.Categoria;
 import br.com.zup.casadocodigo.validations.ExistsId;
 import br.com.zup.casadocodigo.validations.UniqueValue;
 
-public class LivroDTO {
+public class LivroEntradaDTO {
 	
 	@NotBlank
 	@UniqueValue(domainClass = Livro.class, fieldName = "titulo", message = "Esse titulo já existe")
@@ -30,10 +30,9 @@ public class LivroDTO {
 	private String resumo;
 	@NotBlank
 	private String sumario;
-	@NotNull
-	@Min(20)
+	@NotNull @Min(20)
 	private BigDecimal preco ;
-	@Min(20)
+	@NotNull @Min(20)
 	private int numeroPaginas;
 	@NotBlank
 	@UniqueValue(domainClass = Livro.class, fieldName = "isbn", message = "Esse ISBN já existe" )
@@ -49,7 +48,7 @@ public class LivroDTO {
 	@ExistsId(domainClass = Autor.class, fieldName = "id", message = "Essa Autor(a) ainda não está cadastrado(a)")
 	private Long idAutor;
 	
-	public LivroDTO(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, @NotBlank String sumario,
+	public LivroEntradaDTO(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, @NotBlank String sumario,
 			@Min(20) BigDecimal preco, @Min(20) int numeroPaginas, @NotBlank String isbn,Long idCategoria, Long idAutor) {
 
 		this.titulo = titulo;

@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.criarCategoria;
+package br.com.zup.casadocodigo.autor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,20 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/categorias")
-public class CategoriaController {
+@RequestMapping("/autores")
+public class AutoresController {
 	
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager entityManger;
 	
 	@PostMapping
 	@Transactional
-	public String criar(@RequestBody @Valid CategoriaDTO categoriaDTO) {
-		
-		Categoria categoria =  new Categoria(categoriaDTO.getNome());
-		entityManager.persist(categoria);
-		return categoria.toString();		
-
+	public String criar(@RequestBody @Valid AutorEntradaDTO dto) {		
+		Autor autor = dto.convert();
+		entityManger.persist(autor);
+		return  autor.toString();
 	}
-	
 }
