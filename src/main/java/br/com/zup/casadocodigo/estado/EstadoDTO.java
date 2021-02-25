@@ -45,5 +45,4 @@ public class EstadoDTO {
 
         return new Estado(this.nome,pais);
 	}   
-    
 }

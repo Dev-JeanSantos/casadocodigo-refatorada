@@ -28,6 +28,11 @@ public class Estado {
 		this.nome = nome;
 		this.pais = pais;
 	}
+	
+	
+	public Long getId() {
+		return id;
+	}
 
 	@Override
 	public String toString() {
